@@ -1,0 +1,22 @@
+{{define "message"}}
+{
+    {{if .Card}}"card": {
+        "style": "application",
+        "format": "medium",
+        "url": "#",
+        "id": "{{.Card.ID}}",
+        "title": "{{.Card.Title}}",
+        "description": {
+            "format": "html",
+            "value": "{{.Card.Description}}"
+	    },
+        "activity": {
+	        "html": "{{.Card.Activity}}"
+        }
+    },{{end}}
+    "notify": "true",
+    "from": "Golang",
+    "color": "{{.Color}}",
+    "message": "{{.Text}}"
+}
+{{end}}
